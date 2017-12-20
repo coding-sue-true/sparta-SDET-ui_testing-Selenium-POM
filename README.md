@@ -2,7 +2,7 @@
 
 ## Main
 After practising Unit Testing with the [FizzBuzz challenge](https://github.com/coding-sue-true/sparta-SDET-unit_testing-fizzbuzz), and Integration Testing by [testing](https://github.com/coding-sue-true/sparta-SDET-integration_testing-SOM) data from an API, we started practising User Acceptance Testing.
-This implied testing the different steps of login into a real website, more specifically into [BBC](https://www.bbc.co.uk/).
+This implied testing the different steps of signing up into a real website, more specifically into [TOOls QA](http://demoqa.com/registration/).
 
 For this exercise we used Ruby language and Selenium.
 
@@ -27,10 +27,10 @@ Instead getting data from an API and then test it, with Page Object Model, we ha
 
 Let's see bellow the example used and tested in this repository
 
-![BBC_login_page](/images/bbc_signin_page.png)
+![Tools QA](/images/toolsqa.png)
 
 I'm using google dev tools to inspect the different elements of the page.
-In this case, the field "Email or username" has an id of _user-identifier-input_, and this is what we'll use in our code to insert data and test that field.
+In this case, "First name" field has an id of _name 3 firstname_, and this is what we'll use in our code to insert data and test that field.
 
 
 ## How To Test
