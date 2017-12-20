@@ -24,7 +24,6 @@ class SeleniumDemoReg
   REGISTRATION_CONFIRMATION = 'piereg_message'#class
 
   def initialize
-    # set up driver
     @chrome_driver = Selenium::WebDriver.for :chrome
   end
 
@@ -35,8 +34,6 @@ class SeleniumDemoReg
   def current_url
     @chrome_driver.current_url
   end
-
-  # first name field management - Difficulty Easy
 
   def set_first_name_field(first_name)
     @chrome_driver.find_element(:id, FIRST_NAME_FIELD).send_keys(first_name)
@@ -50,8 +47,6 @@ class SeleniumDemoReg
     @chrome_driver.find_element(:id, FIRST_NAME_FIELD).displayed?
   end
 
-  # last name field management - Difficulty Easy
-
   def set_last_name_field(last_name)
     @chrome_driver.find_element(:id, LAST_NAME_FIELD).send_keys(last_name)
   end
@@ -64,8 +59,6 @@ class SeleniumDemoReg
     @chrome_driver.find_element(:id, LAST_NAME_FIELD).displayed?
   end
 
-  # Marital option management - Difficulty Medium
-
   def select_marital_option(option)
     ran_num = rand(2)
     status = @chrome_driver.find_elements(:name, "radio_4[]")
@@ -75,10 +68,7 @@ class SeleniumDemoReg
         return stat.selected?
       end
     end
-    # Consider something like a case statement and check the selenium selected? method
   end
-
-  # hobby option management - Difficulty Medium
 
   def select_hobby_option(option)
     ran_num = rand(2)
@@ -89,18 +79,10 @@ class SeleniumDemoReg
         return stat.selected?
       end
     end
-    # Consider something like a case statement and check the selenium selected? method
-
   end
 
-  # Select Country - Difficulty HARD
-
-  # Look online how to handle option lists with Selenium in Ruby - you need to get used to solving problems
-  # If you are spending too long see if anyone else has been successful
-  # If no solution then a run through will happen once finished
-
   def get_selected_country
-      @chrome_driver.find_element(:id, COUNTRY_DROP_DOWN_LIST)['value']
+    @chrome_driver.find_element(:id, COUNTRY_DROP_DOWN_LIST)['value']
   end
 
   def country_dropdown_list_select(country)
@@ -114,12 +96,6 @@ class SeleniumDemoReg
       end
     end
   end
-
-  # DOB management - Difficulty HARD
-
-  # Look online how to handle option lists with Selenium in Ruby - you need to get used to solving problems
-  # If you are spending too long see if anyone else has been successful
-  # If no solution then a run through will happen once finished
 
   def dob_month_list_select(month_value)
     dob_month = @chrome_driver.find_element(:id, DOB_MONTH_DROPDOWN_LIST)
@@ -157,9 +133,6 @@ class SeleniumDemoReg
     end
   end
 
-
-  # Phone number field management - Difficulty Easy
-
   def set_phone_number_field(phone_number)
     @chrome_driver.find_element(:id, PHONE_NUMBER_FIELDS).send_keys(phone_number)
   end
@@ -167,8 +140,6 @@ class SeleniumDemoReg
   def get_phone_number_field_value
     @chrome_driver.find_element(:id, PHONE_NUMBER_FIELDS)['value']
   end
-
-  #  username field management - Difficulty Easy
 
   def set_user_name_field(user_name)
     @chrome_driver.find_element(:id, USERNAME_FIELD).send_keys(user_name)
@@ -178,8 +149,6 @@ class SeleniumDemoReg
     @chrome_driver.find_element(:id, USERNAME_FIELD)['value']
   end
 
-  # Email field management - Difficulty Easy
-
   def set_email_field(email)
     @chrome_driver.find_element(:id, EMAIL_FIELD).send_keys(email)
   end
@@ -188,8 +157,6 @@ class SeleniumDemoReg
     @chrome_driver.find_element(:id, EMAIL_FIELD)['value']
   end
 
-  # about yourself / description field - Difficulty Easy
-
   def set_about_yourself_field(details)
     @chrome_driver.find_element(:id, DESCRIPTION_FIELD).send_keys(details)
   end
@@ -197,8 +164,6 @@ class SeleniumDemoReg
   def get_about_yourself_value
     @chrome_driver.find_element(:id, DESCRIPTION_FIELD)['value']
   end
-
-  # Password management - Difficulty Easy
 
   def set_password_field(password)
     @chrome_driver.find_element(:id, PASSWORD_FIELD).send_keys(password)
@@ -215,8 +180,6 @@ class SeleniumDemoReg
   def get_confirmation_password_value
     @chrome_driver.find_element(:id, CONFIRM_PASSWORD_FIELD)['value']
   end
-
-  # registration confirmation - Difficulty Easy
 
   def click_submit
     @chrome_driver.find_element(:name, SUBMIT_BUTTON).click
